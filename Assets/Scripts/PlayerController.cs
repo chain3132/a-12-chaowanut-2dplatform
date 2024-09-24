@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour {
 	void FixedUpdate () {
 
 		grounded = Physics2D.OverlapCircle(groundCheck.position, groundRadius, whatIsGround);
+		
 		anim.SetBool("Ground", grounded);
 
 		anim.SetFloat("vSpeed", r2d.velocity.y);

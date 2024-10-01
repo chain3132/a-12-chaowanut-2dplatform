@@ -197,6 +197,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f10ea912b2dc9cd48b737ddcb4a0b404, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   anim: {fileID: 0}
   rb2d: {fileID: 0}
 --- !u!1001 &62024591
@@ -359,6 +360,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72e40e6a3ac53fc449cc04483b7dd140, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   anim: {fileID: 0}
   rb2d: {fileID: 0}
 --- !u!4 &312560947 stripped
@@ -484,8 +486,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d8c2dbe4e453d94e9a8b9bffdd9ce39, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 0
   anim: {fileID: 0}
-  rb2d: {fileID: 0}
+  rb2d: {fileID: 339289965}
+  movePoints:
+  - {fileID: 914256787}
+  - {fileID: 129296436}
+  velocity: {x: 1, y: 0}
+--- !u!50 &339289965 stripped
+Rigidbody2D:
+  m_CorrespondingSourceObject: {fileID: 5099268, guid: 3eeab7ca4bdca4ba382826bdc99b4911, type: 3}
+  m_PrefabInstance: {fileID: 341433136}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &341433136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -525,6 +537,10 @@ PrefabInstance:
     - target: {fileID: 491758, guid: 3eeab7ca4bdca4ba382826bdc99b4911, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 21256820, guid: 3eeab7ca4bdca4ba382826bdc99b4911, type: 3}
+      propertyPath: m_FlipX
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -2658,6 +2674,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5023672, guid: c07db661138134f589f46b8510d57c9a, type: 3}
+      propertyPath: m_CollisionDetection
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 198326, guid: c07db661138134f589f46b8510d57c9a, type: 3}
@@ -2763,6 +2783,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 485146, guid: 6dde6029886a24408b05eced6b5964a6, type: 3}
       propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5044026, guid: 6dde6029886a24408b05eced6b5964a6, type: 3}
+      propertyPath: m_Material
+      value: 
+      objectReference: {fileID: 6200000, guid: 761d90d60646bfd43bba0ebcda768e99, type: 2}
+    - target: {fileID: 5044026, guid: 6dde6029886a24408b05eced6b5964a6, type: 3}
+      propertyPath: m_CollisionDetection
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 11440140, guid: 6dde6029886a24408b05eced6b5964a6, type: 3}

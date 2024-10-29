@@ -6,17 +6,17 @@ using UnityEngine;
 public class Banana : Weapon
 {
     [SerializeField]private float speed;
-
     private void Start()
     {
         Damage = 30;
         speed = 4;
         Move();
+        
     }
 
     public override void OnHitWith(Character character)
     {
-        throw new System.NotImplementedException();
+        character.TakeDamage(Damage);
     }
 
     public override void Move()

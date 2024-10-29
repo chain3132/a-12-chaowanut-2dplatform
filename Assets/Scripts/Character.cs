@@ -16,11 +16,15 @@ public abstract class Character : MonoBehaviour
 
     public bool IsDead()
     {
+        
         return Health <= 0;
     }
+
     public  void TakeDamage(int damage)
     {
         Health -= damage;
-        IsDead();
+        Debug.Log($"player took {damage} damage: Remaining Health : {Health}");
+        ;
+        if(IsDead()) { Destroy(gameObject); }
     }
 }

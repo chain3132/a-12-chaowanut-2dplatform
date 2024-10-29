@@ -16,7 +16,15 @@ public abstract class Weapon : MonoBehaviour
 
     public abstract void OnHitWith(Character character);
     public abstract void Move();
-
+    private void OnTriggerEnter2D(Collider2D other) //add later
+    {
+        if (other.tag == "Player")
+        {
+            OnHitWith(other.GetComponent<Character>());
+        }
+        
+        Destroy(this.gameObject);
+    }
     public int GetShootDirection()
     {
         return 1;

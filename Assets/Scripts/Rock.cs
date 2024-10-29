@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,11 +13,13 @@ public class Rock : Weapon
         Damage = 40;
         Move();
     }
+    
     public override void OnHitWith(Character character)
     {
-        throw new System.NotImplementedException();
+        character.TakeDamage(Damage);
+        
     }
-
+    
     public override void Move()
     {
         Debug.Log("rock move with rigidbody force");

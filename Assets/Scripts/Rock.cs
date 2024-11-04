@@ -17,7 +17,6 @@ public class Rock : Weapon
     public override void OnHitWith(Character character)
     {
         character.TakeDamage(Damage);
-        
     }
     
     public override void Move()

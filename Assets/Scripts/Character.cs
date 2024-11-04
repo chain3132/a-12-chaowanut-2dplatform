@@ -1,22 +1,28 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public abstract class Character : MonoBehaviour
 {
-    [SerializeField]private int health;
-    public int Health { get { return health; } set { health = value; } }
+    [SerializeField]private float health;
+    private float maxHealth;
+    public float Health { get { return health; } set { health = value; } }
     public Animator anim;
     public Rigidbody2D rb2d;
-
+    public Slider healthSlider;
+    void Start()
+    {
+        UpdateHealthBar();
+    }
     public void Init(int newhp)
     {
         Health = newhp;
+        maxHealth = Health;
     }
 
     public bool IsDead()
     {
-        
         return Health <= 0;
     }
 
@@ -24,7 +30,12 @@ public abstract class Character : MonoBehaviour
     {
         Health -= damage;
         Debug.Log($"player took {damage} damage: Remaining Health : {Health}");
-        ;
+        if (healthSlider){UpdateHealthBar();}
         if(IsDead()) { Destroy(gameObject); }
+    }
+    private void UpdateHealthBar()
+    {
+        Debug.Log(Mathf.Clamp(Health / maxHealth,0,1));
+        healthSlider.value = Mathf.Clamp(Health / maxHealth,0,1);
     }
 }

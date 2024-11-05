@@ -11,7 +11,7 @@ public class Ant : Enemy
     private void Start()
     {
         rb2d = GetComponent<Rigidbody2D>();
-        Init(10);
+        Init(40);
         DamageHit = 20;
         
     }

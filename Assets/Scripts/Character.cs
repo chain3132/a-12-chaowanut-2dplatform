@@ -29,13 +29,12 @@ public abstract class Character : MonoBehaviour
     public  void TakeDamage(int damage)
     {
         Health -= damage;
-        Debug.Log($"player took {damage} damage: Remaining Health : {Health}");
         if (healthSlider){UpdateHealthBar();}
         if(IsDead()) { Destroy(gameObject); }
     }
     private void UpdateHealthBar()
     {
-        Debug.Log(Mathf.Clamp(Health / maxHealth,0,1));
+        
         healthSlider.value = Mathf.Clamp(Health / maxHealth,0,1);
     }
 }
